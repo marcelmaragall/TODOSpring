@@ -9,4 +9,11 @@ public class IdObject {
     @NonNull
     private Long id;
 
+    public IdObject(Long id) {
+        this.id=id;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
 }

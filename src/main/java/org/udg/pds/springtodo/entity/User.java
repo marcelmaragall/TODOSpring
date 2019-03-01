@@ -44,8 +44,11 @@ public class User implements Serializable {
   @JsonIgnore
   private String password;
 
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+  private Collection<Group> groups;
+
+
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-  @JsonView(Views.Complete.class)
   private Collection<Task> tasks;
 
   public Long getId() {
